@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PEARCH_DB_USER=pearch
+PEARCH_DB_PASSWORD=flylikeaneagle
+
+export PEARCH_CONNECTION_STRING="user=$PEARCH_DB_USER password=$PEARCH_DB_PASSWORD dbname=$PEARCH_DB_USER host=$PG_PORT_5432_TCP_ADDR port=$PG_PORT_5432_TCP_PORT sslmode=disable"
+
+cd $PEARCH_HOME
+goose up
+./pearch
